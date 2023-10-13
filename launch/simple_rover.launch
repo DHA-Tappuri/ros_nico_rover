@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- rover -->
+  <node pkg="ros_nico_rover" name="rover" type="ros_nico_rover_main.py" output="screen">
+  </node>
+</launch>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- rover -->
+  <include file="$(find ros_nico_rover)/launch/simple_rover.launch">
+  </include>
+
+  <!-- camera node -->
+  <node pkg="usb_cam" name="camera" type="usb_cam_node" output="screen">
+    <param name="pixel_format" value="yuyv" />
+    <param name="image_width"  value="320"  />
+    <param name="image_height" value="240"  />
+    <param name="framerate"    value="15"   />
+  </node>
+
+  <!-- video server -->
+  <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen">
+  </node>
+
+  <!-- joystick -->
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen">
+  </node>
+
+</launch>
+
